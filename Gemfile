@@ -21,5 +21,6 @@ end
 group :test do
   gem 'rspec-rails'
 end
+gem 'jbuilder'
 gem 'backbone-on-rails'
-gem 'bcrypt-ruby', :require => true
+gem 'bcrypt-ruby'

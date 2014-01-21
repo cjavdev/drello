@@ -1,7 +1,17 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+b  = Board.create(:title => Faker::Lorem.word, :user_id => 1)
+b1 = Board.create(:title => Faker::Lorem.word, :user_id => 1)
+b2 = Board.create(:title => Faker::Lorem.word, :user_id => 1)
+
+l1 = List.create(:title => Faker::Lorem.word, :board_id => b.id)
+l2 = List.create(:title => Faker::Lorem.word, :board_id => b.id)
+l3 = List.create(:title => Faker::Lorem.word, :board_id => b.id)
+l4 = List.create(:title => Faker::Lorem.word, :board_id => b1.id)
+l5 = List.create(:title => Faker::Lorem.word, :board_id => b1.id)
+l6 = List.create(:title => Faker::Lorem.word, :board_id => b1.id)
+
+c1 = Card.create(:body => Faker::Lorem.sentence, :list_id => l1.id)
+c2 = Card.create(:body => Faker::Lorem.sentence, :list_id => l1.id)
+c3 = Card.create(:body => Faker::Lorem.sentence, :list_id => l1.id)
+c4 = Card.create(:body => Faker::Lorem.sentence, :list_id => l2.id)
+c5 = Card.create(:body => Faker::Lorem.sentence, :list_id => l3.id)
+c6 = Card.create(:body => Faker::Lorem.sentence, :list_id => l4.id)
