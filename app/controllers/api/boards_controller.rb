@@ -2,11 +2,11 @@ class Api::BoardsController < ApplicationController
   before_filter :require_user!
 
   def index
-    @boards = current_user.boards
+    @boards = current_user.boards.includes(:lists => :cards)
   end
 
   def show
-    @board = Board.find(params[:id])
+    @board = Board.includes(:lists => :cards).find(params[:id])
   end
 
   def create

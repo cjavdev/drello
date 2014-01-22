@@ -4,10 +4,15 @@ window.Drello = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    var $header = $('#header'),
+        $main   = $('#main');
+
+    new Drello.Router({
+      $rootEl: $main
+    });
+
+    Backbone.history.start();
   }
 };
 
-$(document).ready(function(){
-  Drello.initialize();
-});
+$(Drello.initialize);
