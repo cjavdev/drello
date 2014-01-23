@@ -9,10 +9,37 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
 
 @import "bootstrap";
+
 body {
   background-color: rgb(35, 113, 159);
+}
+
+.top-buffer {
+  margin-top: 10px;
+}
+
+.less-margin {
+  margin: 3px;
+  padding: 8px;
+}
+
+.well-hover:hover {
+  background-color: #DDDDDD;
+}
+
+.ui-draggable-dragging {
+  z-index: 100000;
+  /* Rotate div */
+  transform:rotate(7deg);
+  -ms-transform:rotate(7deg); /* IE 9 */
+  -webkit-transform:rotate(7deg); /* Safari and Chrome */
+}
+
+.hl {
+  border: red solid 1px;
 }

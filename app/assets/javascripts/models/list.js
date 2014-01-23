@@ -10,6 +10,7 @@ Drello.Models.List = Backbone.Model.extend({
   cards: function () {
     if(!this._cards) {
       this._cards = new Drello.Collections.Cards();
+      this._cards.list = this;
     }
     return this._cards;
   }

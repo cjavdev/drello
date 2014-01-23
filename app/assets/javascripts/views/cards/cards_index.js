@@ -1,7 +1,8 @@
 Drello.Views.CardsIndex = Backbone.View.extend({
   template: JST['cards/index'],
 
-  initialize: function () {
+  initialize: function (options) {
+    this.list = options.list;
     this._subViews = [];
   },
 
@@ -10,6 +11,7 @@ Drello.Views.CardsIndex = Backbone.View.extend({
     this.$el.html(content);
     this.collection.each(function (card) {
       var subView = new Drello.Views.CardShow({
+        list: this.list,
         model: card
       });
       this._subViews.push(subView);

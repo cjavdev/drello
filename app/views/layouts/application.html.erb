@@ -3,8 +3,14 @@
 <head>
   <title>Drello</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <link href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" type="stylesheet"></link>
   <%= javascript_include_tag "application" %>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript" charset="utf-8">
+    Drello.currentUser = new Drello.Models.User(<%= current_user.to_json.html_safe %>);
+  </script>
 </head>
 <body>
 
